@@ -69,7 +69,7 @@ resource "aws_instance" "web" {
 
 resource "aws_instance" "ansible" {
   ami = var.ami
-  instance_type = var.instance_type
+  instance_type = "t2.medium"
   subnet_id = aws_subnet.dev-public.id
   key_name = aws_key_pair.web_key.id
   vpc_security_group_ids = [aws_security_group.web-sg.id]
